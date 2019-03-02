@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lab #0</string>
+    <string name="button">Нажми</string>
+    <string name="hello_world">Здравствуй, мир!</string>
+</resources>
