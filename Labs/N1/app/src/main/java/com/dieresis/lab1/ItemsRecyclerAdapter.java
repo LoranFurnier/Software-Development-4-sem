@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import com.dieresis.lab1.converter.AbstractNumberConverter;
 import com.dieresis.lab1.converter.RuNumberConverter;
 
+import static com.dieresis.lab1.R.drawable.image;
+
 public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemViewHolder> {
+    private static final int IO_BUFFER_SIZE = 4 * 1024;
     private AbstractNumberConverter mConverter;
     private LayoutInflater mInflater;
     private int mCount;
@@ -18,7 +21,7 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemViewHolder> {
         mInflater = LayoutInflater.from(context);
         mCount = count;
     }
-
+    
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ItemViewHolder(mInflater.inflate(R.layout.item_list, parent, false));
@@ -31,6 +34,7 @@ public class ItemsRecyclerAdapter extends RecyclerView.Adapter<ItemViewHolder> {
         } else {
             holder.itemView.setBackgroundResource(R.color.odd_color);
         }
+        holder.setImage("https://stroi.mos.ru/images/logo.png");
         holder.setItemText(mConverter.convert(position + 1));
     }
 

@@ -53,6 +53,10 @@ public abstract class AbstractNumberConverter {
             res = triad + getTriadName(index, number % 1000) + " " + res;
             number = number / 1000;
             index++;
+            if ((number <= 1999999) && (number >= 1000000)){
+                res += "один миллион";
+                number -= 1000000;
+            }
         }
 
         if (isNegative) {
